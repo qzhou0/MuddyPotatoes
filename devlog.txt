@@ -69,6 +69,17 @@ LESSONS LEARNED
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+2018-01-02
+Clarence :: Come up with new ideas regarding encryption and delivering method, and of their feature; point out overall direction in proposal and edit it
+Tania    :: Write major part of proposal; examine ideas
+Qian     :: Examine ideas; minor feature proposal; edit proposal
+
+2018-01-03
+Clarence :: copy devlog into github repository
+
+2018-01-04
+
+Qian     :: edit devlog portion of devlog.txt for previous days
 
 yyyy-mm-dd
 --------------------------------------------------------------
