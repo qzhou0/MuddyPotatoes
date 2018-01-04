@@ -1,8 +1,8 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+Muddy Potatoes
+Clarence Cheng
+Tania Cao
+Qian Zhou
+pd 01
 ---------------------
 <Project>
 
