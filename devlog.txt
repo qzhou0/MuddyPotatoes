@@ -32,7 +32,7 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
+* We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
 <Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
@@ -83,6 +83,8 @@ Clarence :: Copy devlog into github repository
 Qian     :: Update devlog; Write parts of the UML; edit some places of proposal
 Tania    :: Straighten out the goal of the program; Revise the proposal; Edit parts of the UML; Update devlog
 Clarence :: Revise the proposal; Write major parts of the UML
+
+2018-01-05
 
 yyyy-mm-dd
 --------------------------------------------------------------
