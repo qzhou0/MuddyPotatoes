@@ -32,6 +32,7 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
 <Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
@@ -70,16 +71,18 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 2018-01-02
-Clarence :: Come up with new ideas regarding encryption and delivering method, and of their feature; point out overall direction in proposal and edit it
-Tania    :: Write major part of proposal; examine ideas
-Qian     :: Examine ideas; minor feature proposal; edit proposal
+Clarence :: Come up with new ideas regarding encryption and delivering method, and of their feature; Point out overall direction in proposal; Edit proposal
+Tania    :: Write major part of proposal; Examine ideas
+Qian     :: Examine ideas; minor feature proposal; Edit proposal
 
 2018-01-03
-Clarence :: copy devlog into github repository
+Clarence :: Copy devlog into github repository
 
 2018-01-04
 
-Qian     :: edit devlog portion of devlog.txt for previous days
+Qian     :: Update devlog; Write parts of the UML
+Tania    :: Straighten out the goal of the program; Revise the proposal; Edit parts of the UML; Update devlog
+Clarence :: Revise the proposal; Write major parts of the UML
 
 yyyy-mm-dd
 --------------------------------------------------------------
