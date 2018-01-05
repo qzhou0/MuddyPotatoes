@@ -80,7 +80,7 @@ Clarence :: Copy devlog into github repository
 
 2018-01-04
 
-Qian     :: Update devlog; Write parts of the UML
+Qian     :: Update devlog; Write parts of the UML; edit some places of proposal
 Tania    :: Straighten out the goal of the program; Revise the proposal; Edit parts of the UML; Update devlog
 Clarence :: Revise the proposal; Write major parts of the UML
 
