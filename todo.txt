@@ -2,11 +2,13 @@ MuddyPotatoes -- Clarence Cheng, Tania Cao, Qian Zhou
 APCS1 pd01
 
 ToDo List
-1. Driver class (Woo.java), to be changed corresponding to development
-2. Abstract class Item
-3. Abstract classes Food, Drinks, NonConsumable
-4. Shop Class (?)
-5. Specific shops
-6. Specific Item classes
-7. Test cases
-8. Add accordingly
+* Driver class (Woo.java)
+* Abstract class Item
+* Abstract classes Foods, Drinks, NonConsumables
+* Class Shop (?)
+* Specific shops
+* Specific Item classes
+* Test cases
+* Add accordingly
+* Find any bugs/issues
+* FiX all bugs/issues
