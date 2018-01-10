@@ -84,7 +84,13 @@ Qian     :: Update devlog; Write parts of the UML; edit some places of proposal
 Tania    :: Straighten out the goal of the program; Revise the proposal; Edit parts of the UML; Update devlog
 Clarence :: Revise the proposal; Write major parts of the UML
 
-2018-01-05
+2018-01-08
+All      :: Worked on revising uml and updating README.md
+
+2018-01-09
+Clarence :: Update README and flowchart
+Tania    :: Update README
+Qian     :: start flowchart and todo.txt
 
 yyyy-mm-dd
 --------------------------------------------------------------
