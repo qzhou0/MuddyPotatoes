@@ -19,3 +19,4 @@ Once you start the game, the program will help you navigate through the program 
 * delivery <option>
 * update
 * inventory
+* (item names)
