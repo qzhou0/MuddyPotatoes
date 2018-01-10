@@ -1,5 +1,5 @@
-# MuddyPotatoes
-## Roster: Clarence Cheng, Tania Cao, Qian Zhou
+# Juan's Delivery Co.
+Created by: MuddyPotatoes (Clarence Cheng, Tania Cao, Qian Zhou)
 
 ## General Description
 This is a survival delivery simulator where you survive by making sure that your health level does not reach zero. Your health changes based on your hunger and thirst levels, but your health level can be replenished by buying food and drinks. Once the consumables are delivered, they are automatically consumed and your health is updated. In the meantime, you can also buy non-consumable items to sell for profit. Once you have finished buying or selling items and you don't need to view your inventory, you can choose the option to have a fixed amount of time pass. One obstacle you will encounter, are thieves who will at random days, steal a random amount of money from your balance. However, if you are able to survive for 10 day, you win the game.
