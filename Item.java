@@ -36,5 +36,6 @@ public class  Item{
 	int n = price;
 	price += change;
 	return n;
+    }
 }
     
