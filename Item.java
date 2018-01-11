@@ -12,7 +12,7 @@ public class  Item{
 	return retVal;
     }
     //accessors
-    
+    /*
     public int getDelTime(){
 	return deliveryTime;
     }
@@ -20,8 +20,9 @@ public class  Item{
     public int getCost(){
 	return cost;
     }
-
-    //mutators
+*/
+	/* WHAT!!?!?! user cant choose what they pay, works against entire idea
+    //mutators 
     public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
 	int n = deliveryTime;
 	deliveryTime+= change;
@@ -37,5 +38,6 @@ public class  Item{
 	price += change;
 	return n;
     }
+    */
 }
     
