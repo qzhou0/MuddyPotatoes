@@ -22,9 +22,19 @@ public class  Item{
     }
 
     //mutators
-    public int changeDelTime(int change){// to be used for user to change deliveryTime or shop manage items
-	int i = deliveryTime;
+    public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
+	int n = deliveryTime;
 	deliveryTime+= change;
-	return i; // return old value 
+	return n; // return old value 
+    }
+    public int changeCost(int change){//to be used for shops to change cost
+	int n = cost;
+	cost += change;
+	return n;
+    }
+    public int changePrice(int change){//used for shops to change the price they pay for
+	int n = price;
+	price += change;
+	return n;
 }
-    public
+    
