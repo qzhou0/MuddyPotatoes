@@ -22,6 +22,7 @@ public class  Item{
     }
 */
 	/* WHAT!!?!?! user cant choose what they pay, works against entire idea
+	Re: What shop has the custumer choosing what price they pay? The price is set by the shops
     //mutators 
     public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
 	int n = deliveryTime;
