@@ -4,7 +4,7 @@ import java.util.*;
 public class Woo {
     // instance variables
     public final static int MAX_DURATION = 10;
-    private int day, balance, hunger, thirst, gameOver;
+    private int day, balance, hunger, thirst, gameStatus;
     private ArrayList<Item> inventory;
     private InputStreamReader isr;
     private BufferedReader in;
@@ -15,7 +15,7 @@ public class Woo {
 	balance = Math.random() * 101 + 100;
 	hunger = 80;
 	thirst = 80;
-	gameOver = false;
+	gameStatus = false;
     }
 
     public static int locate (Item item) {
@@ -55,7 +55,7 @@ public class Woo {
 
     public static void run(){
 	if (day > 10){
-	    gameOver = 2; // option 2: You won the game
+	    gameStatus = 2; // option 2: You won the game
 	}
 	else {
 	    
@@ -65,7 +65,7 @@ public class Woo {
     public static void main (String[] args) {
 	Woo test = new Woo();
 
-        while (gameOver == 0) {
+        while (gameStatus == 0) {
 	    Woo.run();
 	}
 
