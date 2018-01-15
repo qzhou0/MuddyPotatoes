@@ -4,7 +4,11 @@ import java.util.*;
 public class Woo {
     // instance variables
     public final static int MAX_DURATION = 10;
+<<<<<<< HEAD
     private int day, balance, hunger, thirst, gameOver;//Should some variables be static or called from an Object?
+=======
+    private int day, balance, hunger, thirst, gameStatus;
+>>>>>>> 1fbf5e98dfd1e55985a4786d207c8731dd97e008
     private ArrayList<Item> inventory;
     private InputStreamReader isr;
     private BufferedReader in;
@@ -15,7 +19,11 @@ public class Woo {
 	balance = Math.random() * 101 + 100;
 	hunger = 80;
 	thirst = 80;
+<<<<<<< HEAD
 	// must be an int:  gameOver = false;
+=======
+	gameStatus = false;
+>>>>>>> 1fbf5e98dfd1e55985a4786d207c8731dd97e008
     }
 
     public static int locate (Item item) {
@@ -56,7 +64,7 @@ public class Woo {
 
     public static void run(){
 	if (day > 10){
-	    gameOver = 2; // option 2: You won the game
+	    gameStatus = 2; // option 2: You won the game
 	}
 	else {
 	    
@@ -66,7 +74,7 @@ public class Woo {
     public static void main (String[] args) {
 	Woo test = new Woo();
 
-        while (gameOver == 0) {
+        while (gameStatus == 0) {
 	    Woo.run();
 	}
 
