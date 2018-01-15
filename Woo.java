@@ -34,7 +34,7 @@ public class Woo {
 
     }
 
-    public static String getValues() {
+    public String getValues() {
 	String  s = "Day: " + day;
 	s += "\nBalance: " + balance;
 	s += "\nHunger Lvl: " + hunger;
@@ -58,7 +58,7 @@ public class Woo {
 	return s;
     }
 
-    public static void run(){
+    public void run(){
 	if (day > 10){
 	    gameStatus = 2; // option 2: You won the game
 	}
@@ -70,11 +70,11 @@ public class Woo {
     public static void main (String[] args) {
 	Woo test = new Woo();
 
-        while (gameStatus == 0) {
-	    Woo.run();
+        while (test.gameStatus == 0) {
+	    test.run();
 	}
 
-	if (day <= 10) {
+	if (test.day <= 10) {
 	    System.out.println("GAME OVER!");
 	    
     }
