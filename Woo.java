@@ -4,7 +4,7 @@ import java.util.*;
 public class Woo {
     // instance variables
     public final static int MAX_DURATION = 10;
-    private int day, balance, hunger, thirst, gameOver;
+    private int day, balance, hunger, thirst, gameOver;//Should some variables be static or called from an Object?
     private ArrayList<Item> inventory;
     private InputStreamReader isr;
     private BufferedReader in;
@@ -15,7 +15,7 @@ public class Woo {
 	balance = Math.random() * 101 + 100;
 	hunger = 80;
 	thirst = 80;
-	gameOver = false;
+	// must be an int:  gameOver = false;
     }
 
     public static int locate (Item item) {
@@ -51,6 +51,7 @@ public class Woo {
     public static String getUnconsumables() {
 	String s = "";
 	// insert code here
+	return s;
     }
 
     public static void run(){
