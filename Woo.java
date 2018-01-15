@@ -4,7 +4,8 @@ import java.util.*;
 public class Woo {
     // instance variables
     public final static int MAX_DURATION = 10;
-    private int day, balance, hunger, thirst, gameOver;//Should some variables be static or called from an Object?
+
+    //Should some variables be static or called from an Object?
 
     private int day, balance, hunger, thirst, gameStatus;
     private ArrayList<Item> inventory;
@@ -15,7 +16,7 @@ public class Woo {
     // default constructor
     public Woo() {
 	day = 0;
-	balance = Math.random() * 101 + 100;
+	balance = (int)(Math.random() * 101) + 100;
 	hunger = 80;
 	thirst = 80;
 	// must be an int:  gameOver = false;
@@ -26,8 +27,12 @@ public class Woo {
 	in = new BufferedReader( isr );
     }
 
-    public static int locate (Item item) {
-	
+    public int locate (Item item) {
+	for (int i = 0; i< inventory.size(); i++){
+	    if (inventory.get(i).equals(item)){
+		return i;}
+	}
+	return -1;
     }
 
     public static void buy (Item item) {
@@ -76,17 +81,17 @@ public class Woo {
 	try{
 	    s = in.readLine();
 	}
-	catch{
+	catch(Exception e){
 	}
 	for (int i = 0; i < s.length(); i++){
 	    if (s.substring(i,i+1).equals(" ")){
 	        command[0]= s.substring(0,i);//main part of the command
-		if (i<s.length-1){
+		if (i<s.length()-1){
 		    command[1]=s.substring(i+1);}//second part of the command
 		break;
 	    }
 	}
-	if (commmand[0].equals(null)){//if there's only the string as command and no second part
+	if (command[0].equals(null)){//if there's only the string as command and no second part
 	    command[0] = s;
 	    }
 	/*------------------------

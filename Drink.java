@@ -1,3 +1,5 @@
-public class Drink{
-
+public class Drink extends Item{
+    public Drink()
+    { price = 0;
+    }
 }
