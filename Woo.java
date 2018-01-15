@@ -8,6 +8,7 @@ public class Woo {
 
     private int day, balance, hunger, thirst, gameStatus;
     private ArrayList<Item> inventory;
+    //private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
     private InputStreamReader isr;
     private BufferedReader in;
 
@@ -19,7 +20,10 @@ public class Woo {
 	thirst = 80;
 	// must be an int:  gameOver = false;
 
-	gameStatus = false;
+	//gameStatus = false; it became int somehow?
+	// from YoRPG
+	isr = new InputStreamReader( System.in );
+	in = new BufferedReader( isr );
     }
 
     public static int locate (Item item) {
@@ -66,6 +70,31 @@ public class Woo {
 	    
 	}
     }
+    public void /*or String[]?*/ commandReciever(){
+	String s="try again";
+	String[] command= new String[2];
+	try{
+	    s = in.readLine();
+	}
+	catch{
+	}
+	for (int i = 0; i < s.length(); i++){
+	    if (s.substring(i,i+1).equals(" ")){
+	        command[0]= s.substring(0,i);//main part of the command
+		if (i<s.length-1){
+		    command[1]=s.substring(i+1);}//second part of the command
+		break;
+	    }
+	}
+	if (commmand[0].equals(null)){//if there's only the string as command and no second part
+	    command[0] = s;
+	    }
+	/*------------------------
+	  part above produces a String list of two elements, that can be checked with an if statement to match corresponding command and be executed,
+or returned "wrong command, please match instructions on how to type in commands" if does not match any
+	---------------------------*/
+    }
+	
 	
     public static void main (String[] args) {
 	Woo test = new Woo();
