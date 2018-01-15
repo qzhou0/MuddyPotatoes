@@ -33,6 +33,7 @@ Flesh out each category whenever necessary, appropriate.
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
+
 <Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
@@ -45,7 +46,7 @@ maybe some of these will move into the Obs.Ovrcm section...
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <wow! oo! etc!...>
-
+* There were two Classes called InputStreamReader and BufferedReader in YoRPG
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
@@ -91,6 +92,20 @@ All      :: Worked on revising uml and updating README.md
 Clarence :: Update README and flowchart
 Tania    :: Update README
 Qian     :: start flowchart and todo.txt
+
+2018-01-11
+Tania    :: Start working on Woo.java
+Clarence :: help change Woo.java
+Qian     :: Initiate Item.java
+
+2018-01-14
+Clarence :: propose to work on project
+Qian     :: minor discussions with Clarence
+
+2018-01-15
+Clarence ::
+Tania    ::
+Qian     :: 
 
 yyyy-mm-dd
 --------------------------------------------------------------
