@@ -70,7 +70,8 @@ public class Woo {
 	}
 
 	if (day <= 10) {
-	    System.out.println("GAME OVER
+	    System.out.println("GAME OVER!");
 	    
+    }
     }
 }
