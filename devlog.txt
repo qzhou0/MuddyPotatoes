@@ -47,6 +47,8 @@ COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <wow! oo! etc!...>
 * There were two Classes called InputStreamReader and BufferedReader in YoRPG
+* We can do something like a "bouncing ball" with functions by calling one in the other and the other in this one, as in playDay() and nextDay()
+
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
