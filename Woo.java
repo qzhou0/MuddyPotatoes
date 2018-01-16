@@ -3,17 +3,13 @@ import java.util.*;
 
 public class Woo {
     // instance variables
-    public final static int MAX_DURATION = 2; // 10 days CHANGED TO 2
-
-    //Should some variables be static or called from an Object?
-
+    public final static int MAX_DURATION = 3;
     private int day, time, balance, nutrition, hydration;
     private boolean gameOver;
     private ArrayList<Item> inventory;
     private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
 
-    private ArrayList<Item> storeInventory;
-    
+    private ArrayList<Item> storeInventory;    
     private InputStreamReader isr;
     private BufferedReader in;
 
@@ -42,8 +38,7 @@ public class Woo {
 
     public void buy (Item item) {
 	balance -= item.cost;
-	deliveringItems.add(storeInventory.remove(locate(storeInventory,item)));
-	
+	deliveringItems.add(storeInventory.remove(locate(storeInventory,item)));	
     }
 
     public void sell (Item item) {
@@ -60,33 +55,32 @@ public class Woo {
 	return s;
     }
 
-    public String getInventory() {//need improvement
+    public String getInventory() { //need improvement
 	String s = "";
 	if (inventory.size() == 0){
-	    return "Your inventory is empty";
+	    s = "Your inventory is empty";
 	}
-		    
-	for (Item I : inventory){
-	    s += I;
+	else {
+	    for (Item I : inventory){
+		s += I;
+	    }
 	}
-       
 	return s;
     }
-    public String getDelStatus(){//need improvement
-	String s ="";
+    
+    public String getDelStatus(){ //need improvement
+	String s = "";
 	if (deliveringItems.size() == 0){
 	    s = "Nothing is to be delivered";
 	}
 	else{
-		 
-	
-	
-	for (Item I : deliveringItems){
-	    s+= I;
-	}
+	    for (Item I : deliveringItems){
+		s+= I;
+	    }
 	}
 	return s;
     }
+    
     public void store(){
 	 int option = 0;
 	 String o = "\nChoose your command: \n";
@@ -95,7 +89,7 @@ public class Woo {
 	 o += "\t3: Exit\n";
 	 o += "Selection: ";
 	 System.out.println(o);
- 	    
+ 	 
 	 try {
 	     option = Integer.parseInt(in.readLine());
 	 }
@@ -105,63 +99,70 @@ public class Woo {
 	     String s ="";
 	     int b = -1;
 	     s += "Items in sale:";
-	     for (int i = 0; i< storeInventory.size(); i++){
-		 s += "\n\t"+i+":" +storeInventory.get(i);
+	     for (int i = 1; i < storeInventory.size(); i++){
+		 s += "\n\t" + i + ": " + storeInventory.get(i);
 	     }
-	     s+= "\n\t-1:return";
-	     s += "\nPlease select an Item to buy";
+	     s += "\n\t0: Exit\n";
+	     s += "Please select an Item to buy.\nSelection: ";
 	     System.out.println(s);
+
 	     try {
 		 b = Integer.parseInt(in.readLine());
 	     }
 	     catch (Exception e) {}
-	     if (b == -1){
-	     }
-	     if (b > -1 && b <storeInventory.size()){
+	     
+	     if (b > 0 && b < storeInventory.size()){
 		 buy(storeInventory.get(b));
 	     }
-	     else{
-		 System.out.println("error in your message, please try again");
+	     else if (b == 0){
+		 break;
+	     }
+	     else {
+		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	     }
 	 }
 	 else if (option == 2) {
-	     String s ="";
-	     int m = -1;
+	     String s = "";
+	     int m = 0;
 	     s += "Items to sell:";
-	     for (int i = 0; i< inventory.size(); i++){
+	     for (int i = 1; i < inventory.size(); i++){
 		 if (inventory.get(i) instanceof Nonconsumable){
-		     s += "\n\t"+i+":" +storeInventory.get(i)+storeInventory.get(i).getPrice();
+		     s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
 		 }
 	     }
-	     s+= "\n\t-1:return";
-	     s += "\nPlease select an Item to buy";
+	     s += "\n\t0: Exit\n";
+	     s += "Please select an Item to sell.\nSelection: ";
 	     System.out.println(s);
+
 	     try {
 		 m = Integer.parseInt(in.readLine());
 	     }
 	     catch (Exception e) {}
-	     if (m == -1){
-	     }
-	     if (m > -1 && m <storeInventory.size()){
+
+	     if (m > 0 && m <storeInventory.size()){
 		 sell(inventory.get(m));
 	     }
+	     else if (m == 0){
+		 break;
+	     }
 	     else{
-		 System.out.println("error in your message, please try again");
+		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	     }
 	 }
 	 
 	 else if (option == 3) {
 	     return;
 	 }
+	 
 	 else {
- 		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
- 	    }
-	 store();
+	     System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	 }
 
+	 store();
     }
+    
     public void nextDay() {
-	// update instance variables
-      	day += 1;
+	day += 1;
       	nutrition -= 50;
       	hydration -= 50;
       	
@@ -241,7 +242,6 @@ public class Woo {
 	}
 	else if (command == 4) {
 	    store();
-	    // insert code here --> goes to store() where you can decide whether you are buying or selling items
 	}
 	else if (command == 5) {
 	    time += 1;
@@ -256,8 +256,8 @@ public class Woo {
 		    
 		    // add notification here!!!!!
 		}
-	    }//they're not tested for we have no items
-
+	    } //they're not tested for we have no items
+	    
 	    if ((nutrition <= 0) || (hydration <= 0)) {
 		gameOver = true;
 		return;
@@ -267,7 +267,7 @@ public class Woo {
 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	}
     }
-	
+    
     public static void main (String[] args) {
 	Woo test = new Woo();
 
