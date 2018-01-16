@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Woo {
     // instance variables
-    public final static int MAX_DURATION = 10; // 10 days
+    public final static int MAX_DURATION = 2; // 10 days CHANGED TO 2
 
     //Should some variables be static or called from an Object?
 
@@ -73,14 +73,17 @@ public class Woo {
 	return s;
     }
     public String getDelStatus(){//need improvement
-	if (deliveringItems.size() == 0){
-	    return "Nothing is to be delivered";
-	}
-		 
 	String s ="";
+	if (deliveringItems.size() == 0){
+	    s = "Nothing is to be delivered";
+	}
+	else{
+		 
+	
 	
 	for (Item I : deliveringItems){
 	    s+= I;
+	}
 	}
 	return s;
     }
@@ -101,7 +104,7 @@ public class Woo {
 	 if (option == 1) {
 	     String s ="";
 	     int b = -1;
-	     s += "Items in sell:";
+	     s += "Items in sale:";
 	     for (int i = 0; i< storeInventory.size(); i++){
 		 s += "\n\t"+i+":" +storeInventory.get(i);
 	     }
@@ -241,15 +244,19 @@ public class Woo {
 	    // insert code here --> goes to store() where you can decide whether you are buying or selling items
 	}
 	else if (command == 5) {
-	    time += 3;
-	    nutrition -= 10;
-	    hydration -= 10;
+	    time += 1;
+	    nutrition -= 20;
+	    hydration -= 20;
 	    for (int i = 0; i < deliveringItems.size(); i++){// updating Items
 		deliveringItems.get(i).changeDelTime(-1);
         	if (deliveringItems.get(i).getDelTime()==0){
 		    inventory.add(deliveringItems.remove(i));
+		    nutrition += deliveringItems.get(i).getFoodVal();
+		    hydration += deliveringItems.get(i).getDrinkVal();
+		    
+		    // add notification here!!!!!
 		}
-     	 }
+	    }//they're not tested for we have no items
 
 	    if ((nutrition <= 0) || (hydration <= 0)) {
 		gameOver = true;
