@@ -4,9 +4,6 @@ import java.util.*;
 public class Woo {
     // instance variables
     public final static int MAX_DURATION = 10; // 10 days
-
-    //Should some variables be static or called from an Object?
-
     private int day, time, balance, nutrition, hydration;
     private boolean gameOver;
     private ArrayList<Item> inventory;
@@ -99,7 +96,6 @@ public class Woo {
 	}
     }
     public void nextDay() {
-	// update instance variables
       	day += 1;
       	nutrition -= 50;
       	hydration -= 50;
@@ -154,7 +150,7 @@ public class Woo {
 	// }
 
 	int command = 0;
-	String c = "\n Choose your command: \n";
+	String c = "\nChoose your command: \n";
 	c += "\t1: View User Information\n";
 	c += "\t2: View Delivery Status\n";
 	c += "\t3: View Inventory\n";
@@ -179,8 +175,36 @@ public class Woo {
 	    System.out.println(getInventory());
 	}
 	else if (command == 4) {
+<<<<<<< HEAD
 	    store();
 	    // insert code here --> goes to store() where you can decide whether you are buying or selling items
+=======
+	    int option = 0;
+	    String o = "\nChoose your command: \n";
+	    o += "\t1: Buy items\n";
+	    o += "\t2: Sell items\n";
+	    o += "\t3: Exit\n";
+	    o += "Selection: ";
+	    System.out.println(o);
+	    
+	    try {
+		option = Integer.parseInt(in.readLine());
+	    }
+	    catch (IOException e) {}
+	
+	    if (option == 1) {
+		//buy(); //fix buy()
+	    }
+	    else if (option == 2) {
+		//sell(); //fix sell()
+	    }
+	    else if (option == 3) {
+		return;
+	    }
+	    else {
+		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	    }
+>>>>>>> a9dbeff87ba6cf8eb87d7a6dacee462ad8895b86
 	}
 	else if (command == 5) {
 	    time += 3;
