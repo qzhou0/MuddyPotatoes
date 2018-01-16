@@ -1,6 +1,6 @@
 public class  Item{
     // ----------instance variables-------------
-    protected int deliveryTime, cost, healthVal, price;
+    protected int deliveryTime, cost, foodVal, drinkVal, price;
     //           to determine info in shop and inventories, health val is effect on thirst/hunger determined by subclasses; price is selleable value
     protected String name;
 
