@@ -107,7 +107,7 @@ Qian     :: minor discussions with Clarence
 2018-01-15
 Clarence :: offer opinions on how to do user-program interaction and gameOver variable, revise code
 Tania    :: change Woo.java, add things so it can run using option wise commands with playGame() and nextDay()
-Qian     :: start change on Woo.java, and revise it
+Qian     :: start change on Woo.java, and revise it; write store()
 
 yyyy-mm-dd
 --------------------------------------------------------------
