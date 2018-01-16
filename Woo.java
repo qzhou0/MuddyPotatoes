@@ -10,7 +10,10 @@ public class Woo {
     private int day, time, balance, nutrition, hydration;
     private boolean gameOver;
     private ArrayList<Item> inventory;
-    //private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
+    private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
+
+    private ArrayList<Item> storeInventory;
+    
     private InputStreamReader isr;
     private BufferedReader in;
 
@@ -21,6 +24,9 @@ public class Woo {
 	balance = (int) (Math.random() * 101) + 100;
 	nutrition = 80;
 	hydration = 80;
+	inventory = new ArrayList<Item>();
+	storeInventory = new ArrayList<Item>();
+	deliveringItems = new ArrayList<Item>();
 	isr = new InputStreamReader (System.in);
 	in = new BufferedReader (isr);
     }
@@ -51,12 +57,47 @@ public class Woo {
 	return s;
     }
 
-    public static String getInventory() {
+    public String getInventory() {//need improvement
 	String s = "";
-	// insert code here
+	if (inventory.size() == 0){
+	    return "Your inventory is empty";
+	}
+		    
+	for (Item I : inventory){
+	    s += I;
+	}
+       
 	return s;
     }
-
+    public String getDelStatus(){//need improvement
+	if (deliveringItems.size() == 0){
+	    return "Nothing is to be delivered";
+	}
+		 
+	String s ="";
+	
+	for (Item I : deliveringItems){
+	    s+= I;
+	}
+	return s;
+    }
+    public void store(){
+	String s ="";
+	int b = -1;
+	s += "Items in sell:";
+	for (int i = 0; i< storeInventory.size(); i++){
+	    s += "\n\t"+i+":" +storeInventory.get(i);
+	}
+	s += "Please select an Item to buy";
+	System.out.println(s);
+	try {
+	    b = Integer.parseInt(in.readLine());
+	}
+	catch (Exception e) {}
+	if (b > -1 && b <storeInventory.size()){
+	    buy(storeInventory.get(b));
+	}
+    }
     public void nextDay() {
 	// update instance variables
       	day += 1;
@@ -125,24 +166,32 @@ public class Woo {
 	try {
 	    command = Integer.parseInt(in.readLine());
 	}
-	catch (IOException e) {}
+	catch (Exception e) {}
 	
         if (command == 1) {
 	    System.out.println(getInfo());
 	}
 	else if (command == 2) {
+	    System.out.println(getDelStatus());
 	    // insert code here (Delivery Status)
 	    }
 	else if (command == 3) {
-	    getInventory();
+	    System.out.println(getInventory());
 	}
 	else if (command == 4) {
+	    store();
 	    // insert code here --> goes to store() where you can decide whether you are buying or selling items
 	}
 	else if (command == 5) {
 	    time += 3;
 	    nutrition -= 10;
 	    hydration -= 10;
+	    for (int i = 0; i < deliveringItems.size(); i++){// updating Items
+		deliveringItems.get(i).changeDelTime(-1);
+        	if (deliveringItems.get(i).getDelTime()==0){
+		    inventory.add(deliveringItems.remove(i));
+		}
+     	 }
 
 	    if ((nutrition <= 0) || (hydration <= 0)) {
 		gameOver = true;
