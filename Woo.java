@@ -3,11 +3,12 @@ import java.util.*;
 
 public class Woo {
     // instance variables
-    public final static int MAX_DURATION = 10;
+    public final static int MAX_DURATION = 10; // 10 days
 
     //Should some variables be static or called from an Object?
 
-    private int day, balance, hunger, thirst, gameStatus;
+    private int day, time, balance, nutrition, hydration;
+    private boolean gameOver;
     private ArrayList<Item> inventory;
     //private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
     private InputStreamReader isr;
@@ -15,22 +16,20 @@ public class Woo {
 
     // default constructor
     public Woo() {
-	day = 0;
-	balance = (int)(Math.random() * 101) + 100;
-	hunger = 80;
-	thirst = 80;
-	// must be an int:  gameOver = false;
-
-	//gameStatus = false; it became int somehow?
-	// from YoRPG
-	isr = new InputStreamReader( System.in );
-	in = new BufferedReader( isr );
+	day = 1;
+	time = 0;
+	balance = (int) (Math.random() * 101) + 100;
+	nutrition = 80;
+	hydration = 80;
+	isr = new InputStreamReader (System.in);
+	in = new BufferedReader (isr);
     }
 
     public int locate (Item item) {
-	for (int i = 0; i< inventory.size(); i++){
-	    if (inventory.get(i).equals(item)){
-		return i;}
+	for (int i = 0; i < inventory.size(); i++){
+	    if (inventory.get(i).equals(item)) {
+		return i;
+	    }
 	}
 	return -1;
     }
@@ -43,84 +42,134 @@ public class Woo {
 
     }
 
-    public String getValues() {
+    public String getInfo() {
 	String  s = "Day: " + day;
+	s += "\nTime: " + time;
 	s += "\nBalance: " + balance;
-	s += "\nHunger Lvl: " + hunger;
-	s += "\nThirst Lvl: " + thirst;
+	s += "\nNutrition Lvl: " + nutrition;
+	s += "\nHydration Lvl: " + hydration;
 	return s;
     }
-    /*
-    public static String getDrinks() {
-	String s = "";
-	// insert code here
-    }
 
-    public static String getFoods() {
-	String s = "";
-	// insert code here
-    }
-    */
-    public static String getUnconsumables() {
+    public static String getInventory() {
 	String s = "";
 	// insert code here
 	return s;
     }
 
-    public void run(){
-	if (day > 10){
-	    gameStatus = 2; // option 2: You won the game
+    public void nextDay() {
+	// update instance variables
+      	day += 1;
+	time = 0;
+      	nutrition -= 50;
+      	hydration -= 50;
+      	
+      	if ((day > 10) || (nutrition <= 0) || (hydration <= 0)) {
+	    gameOver == true;
+	    return;
 	}
-	else {
-	    commandReciever();
-	}
+	playDay();
     }
-    public void /*or String[]?*/ commandReciever(){
-	String s="try again";
-	String[] command= new String[2];
-	command[0]="";command[1]="";//to avoid NullPointException in next if statement command[0].equals...
-	try{
-	    s = in.readLine();
+    
+    public void playDay(){
+	if (time == 24) {
+	    nextDay();
 	}
-	catch(Exception e){
-	}
-	for (int i = 0; i < s.length(); i++){
-	    if (s.substring(i,i+1).equals(" ")){
-	        command[0]= s.substring(0,i);//main part of the command
-		if (i<s.length()-1){
-		    command[1]=s.substring(i+1);}//second part of the command
-		break;
-	    }
-	}
-	if (command[0].equals("")){//if there's only the string as command and no second part
-	    command[0] = s;
-	    }
-	/*------------------------
-	  part above produces a String list of two elements, that can be checked with an if statement to match corresponding command and be executed,
-or returned "wrong command, please match instructions on how to type in commands" if does not match any
-	---------------------------*/
-	if (command[0].equals("update")){
-	    day+=1;
-	}
-	//add other else if statements first
-	else {
-	    System.out.println("wrong command, please follow instructions");
-	}
-    }
 	
+	// if the item being delivered has arrived, it gives a notification message to the user and the user will be given a the choice of viewing their information or not
+	// insert code here (notification)
+	// System.out.println("Your " + item + " has arrived.\n"
+	// if (item == unconsumable) {
+	//     int x;
+	//     String retString = "Would you like to view your inventory?\n";
+	//     retString += "\t1: Yes\n";
+	//     retString += "\t2: No\n";
+	//     retString += "Selection: ";
+
+	//     try {
+	// 	x = Integer.parseInt(in.readLine());
+	//     }
+	//     catch (IOException e) {}
+
+	//     if (x == 1) {
+	// 	getInventory();
+	//     }
+	// }
+	// else {
+	//     int x;
+	//     String retString = "Would you like to view your user information?\n";
+	//     retString += "\t1: Yes\n";
+	//     retString += "\t2: No\n";
+	//     retString += "Selection: ";
+
+	//     try {
+	// 	x = Integer.parseInt(in.readLine());
+	//     }
+	//     catch (IOException e) {}
+
+	//     if (x == 1) {
+	// 	getInfo();
+	//     }
+	// }
+
+	int command;
+	String c = "\n Choose your command: \n";
+	c += "\t1: View User Information\n";
+	c += "\t2: View Delivery Status\n";
+	c += "\t3: View Inventory\n";
+	c += "\t4: Go To Store\n";
+	c += "\t5: Update Time\n";
+	c += "Selection: ";
+	System.out.println(c);
+
+	try {
+	    command = Integer.parseInt(in.readLine());
+	}
+	catch (IOException e) {}
+	
+	while (c != 5) {
+	    if (c == 1) {
+		System.out.println(getInfo());
+	    }
+	    else if (c == 2) {
+		// insert code here (Delivery Status)
+	    }
+	    else if (c == 3) {
+		getInventory();
+	    }
+	    else if (c == 4) {
+		// insert code here --> goes to store() where you can decide whether you are buying or selling items
+	    }
+	    else {
+		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	    }
+	    time += 3;
+	    nutrition -= 10;
+	    hydration -= 10;
+
+	    if ((nutrition <= 0) || (hydration <= 0)) {
+		gameOver == true;
+		return;
+	    }
+
+	    playDay();
+	}
+    }
 	
     public static void main (String[] args) {
 	Woo test = new Woo();
-
+	
         while (test.gameStatus == 0) {
-	    test.run();
+	    test.();
 	}
 
-	if (test.day <= 10) {
-	    System.out.println("GAME OVER!");  
+	playDay();
+	
+	if (test.day > MAX_DURATION) {
+	    System.out.println("\n~~~ CONGRADULATIONS! YOU WON THE GAME! ~~~");  
 	}
-	if (test.gameStatus==2){//option 2: you won
-	    System.out.println("You won!");
+	else {
+	    System.out.println("\n~~~ SORRY, YOU HAVE DIED AND LOST THE GAME. ~~~");
 	}
     }
 }
