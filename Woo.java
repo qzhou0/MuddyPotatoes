@@ -65,7 +65,7 @@ public class Woo {
       	hydration -= 50;
       	
       	if ((day > 10) || (nutrition <= 0) || (hydration <= 0)) {
-	    gameOver == true;
+	    gameOver = true;
 	    return;
 	}
 	playDay();
@@ -148,7 +148,7 @@ public class Woo {
 	    hydration -= 10;
 
 	    if ((nutrition <= 0) || (hydration <= 0)) {
-		gameOver == true;
+		gameOver = true;
 		return;
 	    }
 
@@ -158,10 +158,10 @@ public class Woo {
 	
     public static void main (String[] args) {
 	Woo test = new Woo();
-	
+	/*
         while (test.gameStatus == 0) {
 	    test.();
-	}
+	}*/
 
 	playDay();
 	
