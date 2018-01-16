@@ -43,7 +43,7 @@ public class Woo {
     }
 
     public String getInfo() {
-	String  s = "Day: " + day;
+	String  s = "\nDay: " + day;
 	s += "\nTime: " + time;
 	s += "\nBalance: " + balance;
 	s += "\nNutrition Lvl: " + nutrition;
@@ -60,7 +60,6 @@ public class Woo {
     public void nextDay() {
 	// update instance variables
       	day += 1;
-	time = 0;
       	nutrition -= 50;
       	hydration -= 50;
       	
@@ -73,6 +72,7 @@ public class Woo {
     
     public void playDay(){
 	if (time == 24) {
+	    time = 0;
 	    nextDay();
 	}
 	
@@ -112,7 +112,7 @@ public class Woo {
 	//     }
 	// }
 
-	int command=0;
+	int command = 0;
 	String c = "\n Choose your command: \n";
 	c += "\t1: View User Information\n";
 	c += "\t2: View Delivery Status\n";
@@ -127,22 +127,19 @@ public class Woo {
 	}
 	catch (IOException e) {}
 	
-	while (command != 5) {
-	    if (command == 1) {
-		System.out.println(getInfo());
+        if (command == 1) {
+	    System.out.println(getInfo());
+	}
+	else if (command == 2) {
+	    // insert code here (Delivery Status)
 	    }
-	    else if (command == 2) {
-		// insert code here (Delivery Status)
-	    }
-	    else if (command == 3) {
-		getInventory();
-	    }
-	    else if (command == 4) {
-		// insert code here --> goes to store() where you can decide whether you are buying or selling items
-	    }
-	    else {
-		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-	    }
+	else if (command == 3) {
+	    getInventory();
+	}
+	else if (command == 4) {
+	    // insert code here --> goes to store() where you can decide whether you are buying or selling items
+	}
+	else if (command == 5) {
 	    time += 3;
 	    nutrition -= 10;
 	    hydration -= 10;
@@ -151,25 +148,27 @@ public class Woo {
 		gameOver = true;
 		return;
 	    }
-
-	    playDay();
+	}
+	else {
+	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	}
     }
 	
     public static void main (String[] args) {
 	Woo test = new Woo();
-	/*
-        while (test.gameStatus == 0) {
-	    test.();
-	}*/
 
-	test.playDay();
+	System.out.println("~~~ WELCOME TO JUAN'S DELIVERY CO.! ~~~\n");
+	System.out.println("INSTRUCTIONS: Advance through the game and see whether you can survive for 10 days with your given balance. If your nutrition or hydration level reaches 0, you lose the game. However, you can buy items to replenish those levels and to sell for profit. By command, you can also view your user's information, your inventory, or update time. GOOD LUCK!\n");
+	
+	while (test.gameOver == false) {
+	    test.playDay();
+	}
 	
 	if (test.day > MAX_DURATION) {
 	    System.out.println("\n~~~ CONGRADULATIONS! YOU WON THE GAME! ~~~");  
 	}
 	else {
 	    System.out.println("\n~~~ SORRY, YOU HAVE DIED AND LOST THE GAME. ~~~");
-	}
+	     }
     }
 }
