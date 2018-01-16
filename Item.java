@@ -24,7 +24,9 @@ public class  Item{
     public int getCost(){
 	return cost;
     }
-
+    public int getPrice(){
+	return price;
+    }
 
     //mutators 
     public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
