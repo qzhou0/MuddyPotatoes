@@ -1,13 +1,18 @@
-public abstract class Food extends Item{
+public class Food extends Item{
     public Food(){
-	price = 0;
+	price = 0;//Food cannot sell
     }
-    public /*abstract*/ int	getDelTime(){
-	return deliveryTime;
-	}
-
-    public /*abstract*/ int getCost(){
-	return cost;
-        }
+    // should we add an overloaded constructor?
+    
+    //should be similar for Drink, except the type becomes Drink, and value added to "Hunger" becomes "Thirst"
+    public String toString(){
+      String s ="";
+      s += super.toString();// will this work?
+      s += "\nType: Food";
+      s += "\nValue added to hunger:" + healthVal;
+      s += "\n";
+      return s;
+    }
 
 }
+

@@ -1,18 +1,22 @@
 public class  Item{
     // ----------instance variables-------------
-    private int deliveryTime, cost, healthVal, price;
+    protected int deliveryTime, cost, healthVal, price;
     //           to determine info in shop and inventories, health val is effect on thirst/hunger determined by subclasses; price is selleable value
-    private String name;
+    protected String name;
 
     // --------------methods -----------------
     public Item(){
+	//??? what should we add here
     }
     public String toString(){
 	String retVal = "";
+	retVal += "Name: " + name;
+	retVal += "\nCost:" + cost;
+	retVal += "Time of Delivery Left:" + deliveryTime;
 	return retVal;
     }
     //accessors
-    /*
+    
     public int getDelTime(){
 	return deliveryTime;
     }
@@ -20,9 +24,8 @@ public class  Item{
     public int getCost(){
 	return cost;
     }
-*/
-	/* WHAT!!?!?! user cant choose what they pay, works against entire idea
-	Re: What shop has the custumer choosing what price they pay? The price is set by the shops
+
+
     //mutators 
     public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
 	int n = deliveryTime;
@@ -39,6 +42,5 @@ public class  Item{
 	price += change;
 	return n;
     }
-    */
 }
     
