@@ -105,12 +105,15 @@ public class Woo {
 	     for (int i = 0; i< storeInventory.size(); i++){
 		 s += "\n\t"+i+":" +storeInventory.get(i);
 	     }
-	     s += "Please select an Item to buy";
+	     s+= "\n\t-1:return";
+	     s += "\nPlease select an Item to buy";
 	     System.out.println(s);
 	     try {
 		 b = Integer.parseInt(in.readLine());
 	     }
 	     catch (Exception e) {}
+	     if (b == -1){
+	     }
 	     if (b > -1 && b <storeInventory.size()){
 		 buy(storeInventory.get(b));
 	     }
@@ -127,25 +130,30 @@ public class Woo {
 		     s += "\n\t"+i+":" +storeInventory.get(i)+storeInventory.get(i).getPrice();
 		 }
 	     }
-	     s += "Please select an Item to sell";
+	     s+= "\n\t-1:return";
+	     s += "\nPlease select an Item to buy";
 	     System.out.println(s);
 	     try {
 		 m = Integer.parseInt(in.readLine());
 	     }
 	     catch (Exception e) {}
-	     if (m > -1 && m <inventory.size() && (inventory.get(m) instanceof Nonconsumable)){
+	     if (m == -1){
+	     }
+	     if (m > -1 && m <storeInventory.size()){
 		 sell(inventory.get(m));
 	     }
 	     else{
 		 System.out.println("error in your message, please try again");
 	     }
 	 }
+	 
 	 else if (option == 3) {
 	     return;
 	 }
 	 else {
  		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
  	    }
+	 store();
 
     }
     public void nextDay() {
