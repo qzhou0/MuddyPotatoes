@@ -103,9 +103,9 @@ Clarence :: propose to work on project
 Qian     :: minor discussions with Clarence
 
 2018-01-15
-Clarence :: offer opinions on how to do user-program interaction and gameOver variable
+Clarence :: offer opinions on how to do user-program interaction and gameOver variable, revise code
 Tania    :: change Woo.java, add things so it can run using option wise commands with playGame() and nextDay()
-Qian     :: start change on Woo.java, make small changes to Tania's version
+Qian     :: start change on Woo.java, and revise it
 
 yyyy-mm-dd
 --------------------------------------------------------------
