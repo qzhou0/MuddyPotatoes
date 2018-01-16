@@ -27,6 +27,39 @@ public class Woo {
 	in = new BufferedReader (isr);
     }
 
+    public void thief(){
+	String s = "";
+	int x = (int) (Math.random() * balance);
+	if (x > 0) {
+	    balance -= x;
+	    s += "~~~ YOU HAVE BEEN ROBBED OF " + x " DOLLARS! ~~~";
+	    s += "Would you like to view your user information?\n";
+	    s += "\t1: Yes\n";
+	    s += "\t2: No\n";
+	    s += "Selection: ";
+	    System.out.println(s);
+	    
+	    int o = 0;
+	    while (o != 1 && o != 2) {
+		try {
+		    o = Integer.parseInt(in.readLine());
+		}
+		catch (IOException e) {}
+		
+		if (o == 1) {
+		    getInfo();
+		}
+		else if (o == 2) {
+		    break;
+		}
+		else {
+		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		    System.out.println(s);
+		}
+	    }
+	}
+    }
+    
     public int locate (ArrayList<Item> I, Item item) {
 	for (int i = 0; i < I.size(); i++){
 	    if (I.get(i).equals(item)) {
@@ -178,6 +211,8 @@ public class Woo {
 	    time = 0;
 	    nextDay();
 	}
+
+	thief();
 	
 	// if the item being delivered has arrived, it gives a notification message to the user and the user will be given a the choice of viewing their information or not
 	// insert code here (notification)
