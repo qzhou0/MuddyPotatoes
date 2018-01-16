@@ -127,17 +127,17 @@ public class Woo {
 	}
 	catch (IOException e) {}
 	
-	while (c != 5) {
-	    if (c == 1) {
+	while (command != 5) {
+	    if (command == 1) {
 		System.out.println(getInfo());
 	    }
-	    else if (c == 2) {
+	    else if (command == 2) {
 		// insert code here (Delivery Status)
 	    }
-	    else if (c == 3) {
+	    else if (command == 3) {
 		getInventory();
 	    }
-	    else if (c == 4) {
+	    else if (command == 4) {
 		// insert code here --> goes to store() where you can decide whether you are buying or selling items
 	    }
 	    else {
@@ -163,7 +163,7 @@ public class Woo {
 	    test.();
 	}*/
 
-	playDay();
+	test.playDay();
 	
 	if (test.day > MAX_DURATION) {
 	    System.out.println("\n~~~ CONGRADULATIONS! YOU WON THE GAME! ~~~");  
