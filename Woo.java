@@ -112,7 +112,7 @@ public class Woo {
 	//     }
 	// }
 
-	int command;
+	int command=0;
 	String c = "\n Choose your command: \n";
 	c += "\t1: View User Information\n";
 	c += "\t2: View Delivery Status\n";
