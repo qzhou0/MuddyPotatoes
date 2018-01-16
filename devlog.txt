@@ -33,7 +33,7 @@ Flesh out each category whenever necessary, appropriate.
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
-
+* Get a runnable basic version
 <Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
@@ -104,8 +104,8 @@ Qian     :: minor discussions with Clarence
 
 2018-01-15
 Clarence :: offer opinions on how to do user-program interaction and gameOver variable
-Tania    :: change Woo.java
-Qian     :: start change on Woo.java
+Tania    :: change Woo.java, add things so it can run using option wise commands with playGame() and nextDay()
+Qian     :: start change on Woo.java, make small changes to Tania's version
 
 yyyy-mm-dd
 --------------------------------------------------------------
