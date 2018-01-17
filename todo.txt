@@ -3,9 +3,10 @@ APCS1 pd01
 
 ToDo List
 * Driver class (Woo.java) creation
-* Abstract class Item 
-* Abstract classes Foods, Drinks, NonConsumables 
-* Driver class (Woo.java) methods 
+* Class Item 
+* Classes Foods, Drinks, NonConsumables 
+* Driver class (Woo.java) methods
+* specific Item instances 
 * Test cases
 * Find any bugs/issues
 * FiX all bugs/issues
