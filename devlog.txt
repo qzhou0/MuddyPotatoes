@@ -114,8 +114,8 @@ Qian     :: Revise Woo.java; Write store()
 
 2018-01-16
 Clarence :: revise Woo, test for bugs
-Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog and uml
-Qian     :: edit Woo and update Item classes
+Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog and uml; test Woo
+Qian     :: edit Woo and update Item classes, fix Woo
 
 yyyy-mm-dd
 --------------------------------------------------------------
