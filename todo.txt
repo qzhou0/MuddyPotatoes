@@ -5,12 +5,8 @@ ToDo List
 * Driver class (Woo.java) creation
 * Abstract class Item 
 * Abstract classes Foods, Drinks, NonConsumables 
-* Class Shop (?) 
-* Specific shops 
-* Specific Item classes 
 * Driver class (Woo.java) methods 
 * Test cases
-* Add accordingly
-
 * Find any bugs/issues
 * FiX all bugs/issues
+* Update devlog
