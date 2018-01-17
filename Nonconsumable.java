@@ -1,7 +1,7 @@
 public class Nonconsumable extends Item{
 
     public Nonconsumable(){
-	healthVal = 0;
+	//healthVal = 0;
     }
 
     public String toString(){

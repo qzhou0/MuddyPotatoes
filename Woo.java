@@ -29,7 +29,7 @@ public class Woo {
 
     public void thief(){
 	String s = "";
-	int x = (int) (Math.random() * balance);
+	int x = (int) (Math.random() * (balance / 2));
 	if (x > 0) {
 	    balance -= x;
 	    s += "~~~ YOU HAVE BEEN ROBBED OF " + x + " DOLLARS! ~~~";
@@ -40,7 +40,20 @@ public class Woo {
 	    System.out.println(s);
 	    
 	    int o = 0;
-	    while (o != 1 && o != 2) {
+	    try {
+		o = Integer.parseInt(in.readLine());
+	    }
+	    catch (IOException e) {}
+	    
+	    if (o == 1) {
+		getInfo();
+	    }
+	    else if (o == 2) {
+		break;
+	    }
+	    else {
+		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		System.out.println(s);
 		try {
 		    o = Integer.parseInt(in.readLine());
 		}
@@ -51,10 +64,6 @@ public class Woo {
 		}
 		else if (o == 2) {
 		    break;
-		}
-		else {
-		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		    System.out.println(s);
 		}
 	    }
 	}
@@ -123,81 +132,95 @@ public class Woo {
 	 o += "Selection: ";
 	 System.out.println(o);
  	 
-	 while (option < 1 || option > 3) {
+	 try {
+	     option = Integer.parseInt(in.readLine());
+	 }
+	 catch (Exception e) {}
+	     
+	 if (option == 1) {
+	     String s ="";
+	     int b = -1;
+	     s += "Items in sale:";
+	     for (int i = 1; i < storeInventory.size(); i++){
+		 s += "\n\t" + i + ": " + storeInventory.get(i);
+	     }
+	     s += "\n\t0: Exit\n";
+	     s += "Please select an Item to buy.\nSelection: ";
+	     System.out.println(s);
+ 
 	     try {
-		 option = Integer.parseInt(in.readLine());
+		 b = Integer.parseInt(in.readLine());
 	     }
 	     catch (Exception e) {}
 	     
-	     if (option == 1) {
-		 String s ="";
-		 int b = -1;
-		 s += "Items in sale:";
-		 for (int i = 1; i < storeInventory.size(); i++){
-		     s += "\n\t" + i + ": " + storeInventory.get(i);
-		 }
-		 s += "\n\t0: Exit\n";
-		 s += "Please select an Item to buy.\nSelection: ";
-		 System.out.println(s);
- 
-		 while (b < 0 || (b > storeInventory.size() - 1)) { 
-		     try {
-			 b = Integer.parseInt(in.readLine());
-		     }
-		     catch (Exception e) {}
-	     
-		     if (b > 0 && b < storeInventory.size()){
-			 buy(storeInventory.get(b));
-		     }
-		     else if (b == 0){
-			 break;
-		     }
-		     else {
-			 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-			 System.out.println(s);
-		     }
-		 }
+	     if (b > 0 && b < storeInventory.size()){
+		 buy(storeInventory.get(b));
 	     }
-	     else if (option == 2) {
-		 String s = "";
-		 int m = -1;
-		 s += "Items to sell:";
-		 for (int i = 1; i < inventory.size(); i++){
-		     if (inventory.get(i) instanceof Nonconsumable){
-			 s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
-		     }
-		 }
-		 s += "\n\t0: Exit\n";
-		 s += "Please select an Item to sell.\nSelection: ";
-		 System.out.println(s);
-		 
-		 while (m < 0 || (m > inventory.size() - 1)) {
-		     try {
-			 m = Integer.parseInt(in.readLine());
-		     }
-		     catch (Exception e) {}
-
-		     if (m > 0 && m <storeInventory.size()){
-			 sell(inventory.get(m));
-		     }
-		     else if (m == 0){
-			 break;
-		     }
-		     else{
-			 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-			 System.out.println(s);
-		     }
-		 }
+	     else if (b == 0){
+		 break;
 	     }
-	 
-	     else if (option == 3) {
-		 return;
-	     }
-	     
 	     else {
 		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		 System.out.println(o);
+		 System.out.println(s);
+
+		 try {
+		     b = Integer.parseInt(in.readLine());
+		 }
+		 catch (Exception e) {}
+	     
+		 if (b > 0 && b < storeInventory.size()){
+		     buy(storeInventory.get(b));
+		 }
+		 else if (b == 0){
+		     break;
+		 }
 	     }
+	 }
+	 else if (option == 2) {
+	     String s = "";
+	     int m = -1;
+	     s += "Items to sell:";
+	     for (int i = 1; i < inventory.size(); i++){
+		 if (inventory.get(i) instanceof Nonconsumable){
+		     s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
+		 }
+	     }
+	     s += "\n\t0: Exit\n";
+	     s += "Please select an Item to sell.\nSelection: ";
+	     System.out.println(s);
+		 
+	     try {
+		 m = Integer.parseInt(in.readLine());
+	     }
+	     catch (Exception e) {}
+
+	     if (m > 0 && m <storeInventory.size()){
+		 sell(inventory.get(m));
+	     }
+	     else if (m == 0){
+		 break;
+	     }
+	     else{
+		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		 System.out.println(s);
+		 try {
+		     m = Integer.parseInt(in.readLine());
+		 }
+		 catch (Exception e) {}
+
+		 if (m > 0 && m <storeInventory.size()){
+		     sell(inventory.get(m));
+		 }
+		 else if (m == 0){
+		     break;
+		 }
+	     }
+	 }
+	 else if (option == 3) {
+	     return;
+	 }
+	 else {
+	     System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	 }
 	 store();
     }
@@ -231,8 +254,7 @@ public class Woo {
 	//     retString += "\t1: Yes\n";
 	//     retString += "\t2: No\n";
 	//     retString += "Selection: ";
-
-	//     while (x != 1 && x != 2) {
+	
 	// 	try {
 	// 	    x = Integer.parseInt(in.readLine());
 	// 	}
@@ -247,8 +269,19 @@ public class Woo {
 	// 	else {
 	// 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	// 	    System.out.println(s);
+	//          try {
+	// 	    x = Integer.parseInt(in.readLine());
 	// 	}
-	//     }
+	// 	catch (IOException e) {}
+	
+	// 	if (x == 1) {
+	// 	    getInventory();
+	// 	}
+	// 	else if (x == 2) {
+	// 	    break;
+	// 	}
+	// 	
+	// 	}
 	// }
 	// else {
 	//     int x = 0;
@@ -257,7 +290,6 @@ public class Woo {
 	//     retString += "\t2: No\n";
 	//     retString += "Selection: ";
 		
-	//     while (x != 1 && x != 2) {
 	// 	try {
 	// 	    x = Integer.parseInt(in.readLine());
 	// 	}
@@ -272,9 +304,19 @@ public class Woo {
 	// 	else {
 	// 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	// 	    System.out.println(s);
+	// 	try {
+	// 	    x = Integer.parseInt(in.readLine());
 	// 	}
-	//     }
-	// }
+	// 	catch (IOException e) {}
+		
+	// 	if (x == 1) {
+	// 	    getInfo();    
+	// 	}
+	// 	else if (x == 2) {
+	// 	    break;
+	// 	}
+	// 	}
+        // }
 	
 	int command = 0;
 	String c = "\n Choose your command: \n";
@@ -286,7 +328,47 @@ public class Woo {
 	c += "Selection: ";
 	System.out.println(c);
 
-	while (command < 1 || command > 5) {
+	try {
+	    command = Integer.parseInt(in.readLine());
+	}
+	catch (Exception e) {}
+	    
+	if (command == 1) {
+	    System.out.println(getInfo());
+	}
+	else if (command == 2) {
+	    System.out.println(getDelStatus());
+	    // insert code here (Delivery Status)
+	}
+	else if (command == 3) {
+	    System.out.println(getInventory());
+	}
+	else if (command == 4) {
+	    store();
+	}
+	else if (command == 5) {
+	    time += 1;
+	    nutrition -= 20;
+	    hydration -= 20;
+	    for (int i = 0; i < deliveringItems.size(); i++){// updating Items
+		deliveringItems.get(i).changeDelTime(-1);
+		if (deliveringItems.get(i).getDelTime()==0){
+		    inventory.add(deliveringItems.remove(i));
+		    nutrition += deliveringItems.get(i).getFoodVal();
+		    hydration += deliveringItems.get(i).getDrinkVal();
+		    
+		    // add notification here!!!!!
+		}
+	    } //they're not tested for we have no items
+	    
+	    if ((nutrition <= 0) || (hydration <= 0)) {
+		gameOver = true;
+		return;
+	    }
+	}
+	else {
+	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	    System.out.println(c);
 	    try {
 		command = Integer.parseInt(in.readLine());
 	    }
@@ -324,10 +406,6 @@ public class Woo {
 		    gameOver = true;
 		    return;
 		}
-	    }
-	    else {
-		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		System.out.println(c);
 	    }
 	}
     }
