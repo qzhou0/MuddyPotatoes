@@ -27,11 +27,11 @@ public class Woo {
 	in = new BufferedReader (isr);
 	basicItems = new ArrayList<Item>();
 
-	Food bread = new Food("bread",5,2,25);
+	Food bread = new Food("bread",5,2,40);
 	basicItems.add(bread);
-	Drink water = new Drink("water", 3,1,25);
+	Drink water = new Drink("water", 3,1,40);
 	basicItems.add(water);
-	Nonconsumable paper= new Nonconsumable("paper",3,1,30);
+	Nonconsumable paper= new Nonconsumable("paper",3,1,40);
 	basicItems.add(paper);
 		       
     }
