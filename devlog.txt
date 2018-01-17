@@ -97,17 +97,22 @@ Qian     :: start flowchart and todo.txt
 
 2018-01-11
 Tania    :: Start working on Woo.java
-Clarence :: help change Woo.java
+Clarence :: Help change Woo.java
 Qian     :: Initiate Item.java
 
 2018-01-14
-Clarence :: propose to work on project
-Qian     :: minor discussions with Clarence
+Clarence :: Propose to work on project
+Qian     :: Minor discussions with Clarence
 
 2018-01-15
-Clarence :: offer opinions on how to do user-program interaction and gameOver variable, revise code
-Tania    :: change Woo.java, add things so it can run using option wise commands with playGame() and nextDay()
-Qian     :: start change on Woo.java, and revise it; write store()
+Clarence :: Offer opinions on how to do the user-program interaction and gameOver variable; Revise code
+Tania    :: Update Woo.java and write code for playGame() and nextDay() so it can run using option wise commands
+Qian     :: Revise Woo.java; Write store()
+
+2018-01-16
+Clarence :: 
+Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog
+Qian     :: 
 
 yyyy-mm-dd
 --------------------------------------------------------------
