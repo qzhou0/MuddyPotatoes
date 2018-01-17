@@ -83,6 +83,8 @@ public class Woo {
 
     public void sell (Item item) {
 	balance += item.price;
+	item.changeDelTime(item.getDelTime()*-1+5);
+	item.changeCost(5);
 	deliveringItems.remove(storeInventory.add(item));
     }
 
