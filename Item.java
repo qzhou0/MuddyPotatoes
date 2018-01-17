@@ -28,6 +28,16 @@ public class  Item{
 	return price;
     }
 
+    public int getFoodVal() {
+	// insert code here
+	return 0;
+    }
+
+    public int getDrinkVal() {
+	// insert code here
+	return 0;
+    }
+
     //mutators 
     public int changeDelTime(int change){// to be used for user (or shop) to change deliveryTime
 	int n = deliveryTime;

@@ -32,7 +32,7 @@ public class Woo {
 	int x = (int) (Math.random() * balance);
 	if (x > 0) {
 	    balance -= x;
-	    s += "~~~ YOU HAVE BEEN ROBBED OF " + x " DOLLARS! ~~~";
+	    s += "~~~ YOU HAVE BEEN ROBBED OF " + x + " DOLLARS! ~~~";
 	    s += "Would you like to view your user information?\n";
 	    s += "\t1: Yes\n";
 	    s += "\t2: No\n";
@@ -224,57 +224,57 @@ public class Woo {
 	
 	// if the item being delivered has arrived, it gives a notification message to the user and the user will be given a the choice of viewing their information or not
 	// insert code here (notification)
-	System.out.println("Your " + item + " has arrived.\n");
-	if (item == unconsumable) {
-	    int x = 0;
-	    String retString = "Would you like to view your inventory?\n";
-	    retString += "\t1: Yes\n";
-	    retString += "\t2: No\n";
-	    retString += "Selection: ";
+	// System.out.println("Your " + item + " has arrived.\n");
+	// if (item == unconsumable) {
+	//     int x = 0;
+	//     String retString = "Would you like to view your inventory?\n";
+	//     retString += "\t1: Yes\n";
+	//     retString += "\t2: No\n";
+	//     retString += "Selection: ";
 
-	    while (x != 1 && x != 2) {
-		try {
-		    x = Integer.parseInt(in.readLine());
-		}
-		catch (IOException e) {}
+	//     while (x != 1 && x != 2) {
+	// 	try {
+	// 	    x = Integer.parseInt(in.readLine());
+	// 	}
+	// 	catch (IOException e) {}
 		
-		if (x == 1) {
-		    getInventory();
-		}
-		else if (x == 2) {
-		    break;
-		}
-		else {
-		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		    System.out.println(s);
-		}
-	    }
-	}
-	else {
-	    int x = 0;
-	    String retString = "Would you like to view your user information?\n";
-	    retString += "\t1: Yes\n";
-	    retString += "\t2: No\n";
-	    retString += "Selection: ";
+	// 	if (x == 1) {
+	// 	    getInventory();
+	// 	}
+	// 	else if (x == 2) {
+	// 	    break;
+	// 	}
+	// 	else {
+	// 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	// 	    System.out.println(s);
+	// 	}
+	//     }
+	// }
+	// else {
+	//     int x = 0;
+	//     String retString = "Would you like to view your user information?\n";
+	//     retString += "\t1: Yes\n";
+	//     retString += "\t2: No\n";
+	//     retString += "Selection: ";
 		
-	    while (x != 1 && x != 2) {
-		try {
-		    x = Integer.parseInt(in.readLine());
-		}
-		catch (IOException e) {}
+	//     while (x != 1 && x != 2) {
+	// 	try {
+	// 	    x = Integer.parseInt(in.readLine());
+	// 	}
+	// 	catch (IOException e) {}
 		
-		if (x == 1) {
-		    getInfo();    
-		}
-		else if (x == 2) {
-		    break;
-		}
-		else {
-		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		    System.out.println(s);
-		}
-	    }
-	}
+	// 	if (x == 1) {
+	// 	    getInfo();    
+	// 	}
+	// 	else if (x == 2) {
+	// 	    break;
+	// 	}
+	// 	else {
+	// 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	// 	    System.out.println(s);
+	// 	}
+	//     }
+	// }
 	
 	int command = 0;
 	String c = "\n Choose your command: \n";
