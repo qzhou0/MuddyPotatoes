@@ -28,6 +28,7 @@ public class Woo {
     }
 
     public void thief(){
+<<<<<<< HEAD
 	String s = "";
 	int x = (int) (Math.random() * (balance / 2));
 	if (x > 0) {
@@ -54,6 +55,51 @@ public class Woo {
 	    }
 	    else {
 		System.out.println("Sorry, there was an error in running your command.");
+=======
+	int thief = (int) Math.random() * 2;
+	if (thief == 0) {
+	    return;
+	}
+	else {
+	    String s = "";
+	    int x = (int) (Math.random() * (balance / 2));
+	    if (x > 0) {
+		balance -= x;
+		s += "~~~ YOU HAVE BEEN ROBBED OF " + x + " DOLLARS! ~~~";
+		s += "Would you like to view your user information?\n";
+		s += "\t1: Yes\n";
+		s += "\t2: No\n";
+		s += "Selection: ";
+		System.out.println(s);
+	    
+		int o = 0;
+		try {
+		    o = Integer.parseInt(in.readLine());
+		}
+		catch (IOException e) {}
+	    
+		if (o == 1) {
+		    getInfo();
+		}
+		else if (o == 2) {
+		    //
+		}
+		else {
+		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		    System.out.println(s);
+		    try {
+			o = Integer.parseInt(in.readLine());
+		    }
+		    catch (IOException e) {}
+		
+		    if (o == 1) {
+			getInfo();
+		    }
+		    else if (o == 2) {
+			//
+		    }
+		}
+>>>>>>> 61c3d0f22d2ccc8f505a3e411057794e43bf9e02
 	    }
 	}
     }
@@ -146,11 +192,32 @@ public class Woo {
 	     if (b > -1 && b < storeInventory.size()){
 		 buy(storeInventory.get(b));
 	     }
+<<<<<<< HEAD
 	     else if (b == -1){
 		 // we don't need a break
 	     }
 	     else {
 		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+=======
+	     else if (b == 0){
+		 //
+	     }
+	     else {
+		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		 System.out.println(s);
+
+		 try {
+		     b = Integer.parseInt(in.readLine());
+		 }
+		 catch (Exception e) {}
+	     
+		 if (b > 0 && b < storeInventory.size()){
+		     buy(storeInventory.get(b));
+		 }
+		 else if (b == 0){
+		     //
+		 }
+>>>>>>> 61c3d0f22d2ccc8f505a3e411057794e43bf9e02
 	     }
 	 }
 	 else if (option == 2) {
@@ -174,11 +241,31 @@ public class Woo {
 	     if (m > -1 && m <storeInventory.size()){
 		 sell(inventory.get(m));
 	     }
+<<<<<<< HEAD
 	     else if (m == -1){
 	       
 	     }
 	     else{
 		 System.out.println("Sorry, there was an error in running your command.");
+=======
+	     else if (m == 0){
+		 //
+	     }
+	     else{
+		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		 System.out.println(s);
+		 try {
+		     m = Integer.parseInt(in.readLine());
+		 }
+		 catch (Exception e) {}
+
+		 if (m > 0 && m <storeInventory.size()){
+		     sell(inventory.get(m));
+		 }
+		 else if (m == 0){
+		     //
+		 }
+>>>>>>> 61c3d0f22d2ccc8f505a3e411057794e43bf9e02
 	     }
 	 }
 	 else if (option == 3) {
