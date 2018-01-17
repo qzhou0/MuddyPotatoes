@@ -1,13 +1,14 @@
 public class Drink extends Item{
-    public Drink()
-    { price = 0;
+    public Drink() {
+	price = 0;
     }
+
     public String toString(){
-      String s ="";
+      String s = "";
       s += super.toString();// will this work?
       s += "\nType: Drink";
-      s += "\nValue added to thirst:" + healthVal;
-      s += "\n";
+      s += "\nNutrition Value: " + foodVal;
+      s += "\nHydration Value: " + drinkVal;
       return s;
     }
 }
