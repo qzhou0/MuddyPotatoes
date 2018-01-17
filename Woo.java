@@ -168,7 +168,7 @@ public class Woo {
 	     s += "Items to sell:";
 	     for (int i = 0; i < inventory.size(); i++){
 		 if (inventory.get(i) instanceof Nonconsumable){
-		     s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
+		     s += "\n\t" + i + ": " + inventory.get(i) + inventory.get(i).getPrice();
 		 }
 	     }
 	     s += "\n\t-1: Return\n";
@@ -180,7 +180,7 @@ public class Woo {
 	     }
 	     catch (Exception e) {}
 
-	     if (m > -1 && m <storeInventory.size()){
+	     if (m > -1 && m <inventory.size()){
 		 sell(inventory.get(m));
 	     }
 	     else if (m == -1){
