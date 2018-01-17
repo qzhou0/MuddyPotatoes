@@ -1,6 +1,8 @@
 public class Nonconsumable extends Item{
 
     public Nonconsumable(){
+	drinkVal = 0;
+	foodVal = 0;
 	//healthVal = 0;
     }
 

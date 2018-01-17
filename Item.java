@@ -11,8 +11,8 @@ public class  Item{
     public String toString(){
 	String retVal = "";
 	retVal += "Name: " + name;
-	retVal += "\nCost:" + cost;
-	retVal += "Time of Delivery Left:" + deliveryTime;
+	retVal += "\tCost:" + cost;
+	retVal += "\tTime of Delivery Left:" + deliveryTime;
 	return retVal;
     }
     //accessors
@@ -29,13 +29,13 @@ public class  Item{
     }
 
     public int getFoodVal() {
-	// insert code here
-	return 0;
+	
+	return foodVal;
     }
 
     public int getDrinkVal() {
-	// insert code here
-	return 0;
+	
+	return drinkVal;
     }
 
     //mutators 

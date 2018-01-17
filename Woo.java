@@ -43,28 +43,17 @@ public class Woo {
 	    try {
 		o = Integer.parseInt(in.readLine());
 	    }
-	    catch (IOException e) {}
+	    catch (Exception e) {
+	    }
 	    
 	    if (o == 1) {
-		getInfo();
+		System.out.println(getInfo());
 	    }
 	    else if (o == 2) {
-		break;
+		
 	    }
 	    else {
-		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		System.out.println(s);
-		try {
-		    o = Integer.parseInt(in.readLine());
-		}
-		catch (IOException e) {}
-		
-		if (o == 1) {
-		    getInfo();
-		}
-		else if (o == 2) {
-		    break;
-		}
+		System.out.println("Sorry, there was an error in running your command.");
 	    }
 	}
     }
@@ -135,16 +124,17 @@ public class Woo {
 	 try {
 	     option = Integer.parseInt(in.readLine());
 	 }
-	 catch (Exception e) {}
+	 catch (Exception e) {
+	 }
 	     
-	 if (option == 1) {
+	 if (option == 1) {//buy
 	     String s ="";
-	     int b = -1;
+	     int b = -2;
 	     s += "Items in sale:";
-	     for (int i = 1; i < storeInventory.size(); i++){
+	     for (int i = 0; i < storeInventory.size(); i++){
 		 s += "\n\t" + i + ": " + storeInventory.get(i);
 	     }
-	     s += "\n\t0: Exit\n";
+	     s += "\n\t-1: Exit\n";//we must use -1 because zero could be an index
 	     s += "Please select an Item to buy.\nSelection: ";
 	     System.out.println(s);
  
@@ -153,27 +143,14 @@ public class Woo {
 	     }
 	     catch (Exception e) {}
 	     
-	     if (b > 0 && b < storeInventory.size()){
+	     if (b > -1 && b < storeInventory.size()){
 		 buy(storeInventory.get(b));
 	     }
-	     else if (b == 0){
-		 break;
+	     else if (b == -1){
+		 // we don't need a break
 	     }
 	     else {
 		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		 System.out.println(s);
-
-		 try {
-		     b = Integer.parseInt(in.readLine());
-		 }
-		 catch (Exception e) {}
-	     
-		 if (b > 0 && b < storeInventory.size()){
-		     buy(storeInventory.get(b));
-		 }
-		 else if (b == 0){
-		     break;
-		 }
 	     }
 	 }
 	 else if (option == 2) {
@@ -185,7 +162,7 @@ public class Woo {
 		     s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
 		 }
 	     }
-	     s += "\n\t0: Exit\n";
+	     s += "\n\t-1: Return\n";
 	     s += "Please select an Item to sell.\nSelection: ";
 	     System.out.println(s);
 		 
@@ -194,26 +171,14 @@ public class Woo {
 	     }
 	     catch (Exception e) {}
 
-	     if (m > 0 && m <storeInventory.size()){
+	     if (m > -1 && m <storeInventory.size()){
 		 sell(inventory.get(m));
 	     }
-	     else if (m == 0){
-		 break;
+	     else if (m == -1){
+	       
 	     }
 	     else{
-		 System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-		 System.out.println(s);
-		 try {
-		     m = Integer.parseInt(in.readLine());
-		 }
-		 catch (Exception e) {}
-
-		 if (m > 0 && m <storeInventory.size()){
-		     sell(inventory.get(m));
-		 }
-		 else if (m == 0){
-		     break;
-		 }
+		 System.out.println("Sorry, there was an error in running your command.");
 	     }
 	 }
 	 else if (option == 3) {
@@ -222,7 +187,7 @@ public class Woo {
 	 else {
 	     System.out.println("Sorry, there was an error in running your command. Please input your command again.");
 	 }
-	 store();
+	 store();//recursively runs function in case the user put a wrong input or wants to do more than one thing
     }
     
     public void nextDay() {
@@ -230,7 +195,7 @@ public class Woo {
       	nutrition -= 50;
       	hydration -= 50;
       	
-      	if ((day > 10) || (nutrition <= 0) || (hydration <= 0)) {
+      	if ((day > MAX_DURATION) || (nutrition <= 0) || (hydration <= 0)) {
 	    gameOver = true;
 	    return;
 	}
@@ -243,7 +208,7 @@ public class Woo {
 	    nextDay();
 	}
 
-	thief();
+	
 	
 	// if the item being delivered has arrived, it gives a notification message to the user and the user will be given a the choice of viewing their information or not
 	// insert code here (notification)
@@ -331,14 +296,15 @@ public class Woo {
 	try {
 	    command = Integer.parseInt(in.readLine());
 	}
-	catch (Exception e) {}
+	catch (Exception e) {
+	    System.out.println("Sorry, there was an error in running your command.");}
 	    
 	if (command == 1) {
 	    System.out.println(getInfo());
 	}
 	else if (command == 2) {
 	    System.out.println(getDelStatus());
-	    // insert code here (Delivery Status)
+	
 	}
 	else if (command == 3) {
 	    System.out.println(getInventory());
@@ -347,17 +313,23 @@ public class Woo {
 	    store();
 	}
 	else if (command == 5) {
+	    //I would rather have the thief here that each time playDay() runs, since it's repeating and may run again due to input error
+	    if (((int)Math.random()*4)==0){//maybe add some probablity?
+		thief();
+	    }
 	    time += 1;
 	    nutrition -= 20;
 	    hydration -= 20;
 	    for (int i = 0; i < deliveringItems.size(); i++){// updating Items
 		deliveringItems.get(i).changeDelTime(-1);
-		if (deliveringItems.get(i).getDelTime()==0){
-		    inventory.add(deliveringItems.remove(i));
-		    nutrition += deliveringItems.get(i).getFoodVal();
-		    hydration += deliveringItems.get(i).getDrinkVal();
+		Item I = deliveringItems.get(i);//make a new variable to avoid calling it again; but below the above fxn because we musn't create an alias I think?
+		if (I.getDelTime()==0){
+		    nutrition += I.getFoodVal();
+		    hydration += I.getDrinkVal();
+		    System.out.println("Your " + I + " has arrived.\n");
 		    
-		    // add notification here!!!!!
+		    inventory.add(deliveringItems.remove(i));//must remove at the end
+		    
 		}
 	    } //they're not tested for we have no items
 	    
@@ -368,46 +340,8 @@ public class Woo {
 	}
 	else {
 	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
-	    System.out.println(c);
-	    try {
-		command = Integer.parseInt(in.readLine());
-	    }
-	    catch (Exception e) {}
-	    
-	    if (command == 1) {
-		System.out.println(getInfo());
-	    }
-	    else if (command == 2) {
-		System.out.println(getDelStatus());
-		// insert code here (Delivery Status)
-	    }
-	    else if (command == 3) {
-		System.out.println(getInventory());
-	    }
-	    else if (command == 4) {
-		store();
-	    }
-	    else if (command == 5) {
-		time += 1;
-		nutrition -= 20;
-		hydration -= 20;
-		for (int i = 0; i < deliveringItems.size(); i++){// updating Items
-		    deliveringItems.get(i).changeDelTime(-1);
-		    if (deliveringItems.get(i).getDelTime()==0){
-			inventory.add(deliveringItems.remove(i));
-			nutrition += deliveringItems.get(i).getFoodVal();
-			hydration += deliveringItems.get(i).getDrinkVal();
-		    
-			// add notification here!!!!!
-		    }
-		} //they're not tested for we have no items
-	    
-		if ((nutrition <= 0) || (hydration <= 0)) {
-		    gameOver = true;
-		    return;
-		}
-	    }
 	}
+	//We don't need to give the user another chance if they input false, the program is repeating itself so the user will know how to find it if they want to 
     }
     
     public static void main (String[] args) {

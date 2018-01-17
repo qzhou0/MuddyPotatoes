@@ -1,6 +1,7 @@
 public class Food extends Item{
     public Food(){
 	price = 0;//Food cannot sell
+	drinkVal = 0;
     }
     // should we add an overloaded constructor?
     
@@ -8,8 +9,8 @@ public class Food extends Item{
     public String toString(){
       String s ="";
       s += super.toString();// will this work?
-      s += "\nType: Food";
-      s += "\nValue added to hunger:" + healthVal;
+      s += "\tType: Food";
+      s += "\tValue added to hunger:" + foodVal;
       s += "\n";
       return s;
     }
