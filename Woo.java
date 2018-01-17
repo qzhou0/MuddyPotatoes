@@ -8,7 +8,7 @@ public class Woo {
     private boolean gameOver;
     private ArrayList<Item> inventory;
     private ArrayList<Item> deliveringItems; //should we separate items that are in a delivery for easiness's sake in updating the delivery time?
-
+    private ArrayList<Item> basicItems;//list of basic Items
     private ArrayList<Item> storeInventory;    
     private InputStreamReader isr;
     private BufferedReader in;
@@ -25,6 +25,15 @@ public class Woo {
 	deliveringItems = new ArrayList<Item>();
 	isr = new InputStreamReader (System.in);
 	in = new BufferedReader (isr);
+	basicItems = new ArrayList<Item>();
+
+	Food bread = new Food("bread",5,2,5);
+	basicItems.add(bread);
+	Drink water = new Drink("water", 3,1,5);
+	basicItems.add(water);
+	Nonconsumable paper= new Nonconsumable("paper",3,1,5);
+	basicItems.add(paper);
+		       
     }
 
     public void thief(){
@@ -317,6 +326,7 @@ public class Woo {
 	    if (((int)Math.random()*4)==0){//maybe add some probablity?
 		thief();
 	    }
+	    storeInventory.add(basicItems.get((int)(Math.random()*basicItems.size())));
 	    time += 1;
 	    nutrition -= 20;
 	    hydration -= 20;
