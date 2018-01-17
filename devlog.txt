@@ -35,10 +35,13 @@ OBSTACLES OVERCOME
 * We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to a slight lack of adequate communication and misunderstandings, the goal of the program was lost and distorted, but after we had a discussion, we were promptly able to get back on track with the project. 
 * While in planning phases, some of us had different ideas as to how the program should be. Examples include what classes there should be, how items should be displayed, stored, and transfered, and what variables were needed or preferable. To resolve the issue the three of us discussed it and made our case for our opinions. The process resulted in a better plan for better code.
 * Get a runnable basic version
+* there was an error for the sell part in store() which turns out to be the remnants of the copying from the buying option in store()
 <Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* We only have three Items that can be played with
+* the display might be a little unclear in some places
 <
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
@@ -52,7 +55,7 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed Item and its subclasses from abstract to non-abstract because that would be simpler and we can instantiate the three types of Items, were we had thought we could make a class for every object before
+* We changed Item and its subclasses from abstract to non-abstract because that would be simpler and we can instantiate the three types of Items, were we had thought we could make a class for every object before
 
 We changed ___ to ___ bc...
 <etc>
@@ -60,6 +63,7 @@ We changed ___ to ___ bc...
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 <tales of wisdom gained...>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
