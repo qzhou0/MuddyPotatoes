@@ -6,7 +6,7 @@ public class  Item{
 
     // --------------methods -----------------
     public Item(){
-	//??? what should we add here
+	// ??? what should we add here
     }
     public String toString(){
 	String retVal = "";
