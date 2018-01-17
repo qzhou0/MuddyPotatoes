@@ -31,8 +31,11 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* We learned another way to do user input without importing keyboard
+* We learned how to properly plan out the code before writing it
+* We learned how to determine what variables are important
+* We learned how to communicate more efficiently so that we could finish the project in a smooth and timely manner
 
-<tales of wisdom gained...>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
