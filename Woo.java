@@ -224,40 +224,58 @@ public class Woo {
 	
 	// if the item being delivered has arrived, it gives a notification message to the user and the user will be given a the choice of viewing their information or not
 	// insert code here (notification)
-	// System.out.println("Your " + item + " has arrived.\n"
-	// if (item == unconsumable) {
-	//     int x;
-	//     String retString = "Would you like to view your inventory?\n";
-	//     retString += "\t1: Yes\n";
-	//     retString += "\t2: No\n";
-	//     retString += "Selection: ";
+	System.out.println("Your " + item + " has arrived.\n");
+	if (item == unconsumable) {
+	    int x = 0;
+	    String retString = "Would you like to view your inventory?\n";
+	    retString += "\t1: Yes\n";
+	    retString += "\t2: No\n";
+	    retString += "Selection: ";
 
-	//     try {
-	// 	x = Integer.parseInt(in.readLine());
-	//     }
-	//     catch (IOException e) {}
-
-	//     if (x == 1) {
-	// 	getInventory();
-	//     }
-	// }
-	// else {
-	//     int x;
-	//     String retString = "Would you like to view your user information?\n";
-	//     retString += "\t1: Yes\n";
-	//     retString += "\t2: No\n";
-	//     retString += "Selection: ";
-
-	//     try {
-	// 	x = Integer.parseInt(in.readLine());
-	//     }
-	//     catch (IOException e) {}
-
-	//     if (x == 1) {
-	// 	getInfo();
-	//     }
-	// }
-
+	    while (x != 1 && x != 2) {
+		try {
+		    x = Integer.parseInt(in.readLine());
+		}
+		catch (IOException e) {}
+		
+		if (x == 1) {
+		    getInventory();
+		}
+		else if (x == 2) {
+		    break;
+		}
+		else {
+		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		    System.out.println(s);
+		}
+	    }
+	}
+	else {
+	    int x = 0;
+	    String retString = "Would you like to view your user information?\n";
+	    retString += "\t1: Yes\n";
+	    retString += "\t2: No\n";
+	    retString += "Selection: ";
+		
+	    while (x != 1 && x != 2) {
+		try {
+		    x = Integer.parseInt(in.readLine());
+		}
+		catch (IOException e) {}
+		
+		if (x == 1) {
+		    getInfo();    
+		}
+		else if (x == 2) {
+		    break;
+		}
+		else {
+		    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		    System.out.println(s);
+		}
+	    }
+	}
+	
 	int command = 0;
 	String c = "\n Choose your command: \n";
 	c += "\t1: View User Information\n";
@@ -268,46 +286,49 @@ public class Woo {
 	c += "Selection: ";
 	System.out.println(c);
 
-	try {
-	    command = Integer.parseInt(in.readLine());
-	}
-	catch (Exception e) {}
-	
-        if (command == 1) {
-	    System.out.println(getInfo());
-	}
-	else if (command == 2) {
-	    System.out.println(getDelStatus());
-	    // insert code here (Delivery Status)
+	while (command < 1 || command > 5) {
+	    try {
+		command = Integer.parseInt(in.readLine());
 	    }
-	else if (command == 3) {
-	    System.out.println(getInventory());
-	}
-	else if (command == 4) {
-	    store();
-	}
-	else if (command == 5) {
-	    time += 1;
-	    nutrition -= 20;
-	    hydration -= 20;
-	    for (int i = 0; i < deliveringItems.size(); i++){// updating Items
-		deliveringItems.get(i).changeDelTime(-1);
-        	if (deliveringItems.get(i).getDelTime()==0){
-		    inventory.add(deliveringItems.remove(i));
-		    nutrition += deliveringItems.get(i).getFoodVal();
-		    hydration += deliveringItems.get(i).getDrinkVal();
-		    
-		    // add notification here!!!!!
-		}
-	    } //they're not tested for we have no items
+	    catch (Exception e) {}
 	    
-	    if ((nutrition <= 0) || (hydration <= 0)) {
-		gameOver = true;
-		return;
+	    if (command == 1) {
+		System.out.println(getInfo());
 	    }
-	}
-	else {
-	    System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+	    else if (command == 2) {
+		System.out.println(getDelStatus());
+		// insert code here (Delivery Status)
+	    }
+	    else if (command == 3) {
+		System.out.println(getInventory());
+	    }
+	    else if (command == 4) {
+		store();
+	    }
+	    else if (command == 5) {
+		time += 1;
+		nutrition -= 20;
+		hydration -= 20;
+		for (int i = 0; i < deliveringItems.size(); i++){// updating Items
+		    deliveringItems.get(i).changeDelTime(-1);
+		    if (deliveringItems.get(i).getDelTime()==0){
+			inventory.add(deliveringItems.remove(i));
+			nutrition += deliveringItems.get(i).getFoodVal();
+			hydration += deliveringItems.get(i).getDrinkVal();
+		    
+			// add notification here!!!!!
+		    }
+		} //they're not tested for we have no items
+	    
+		if ((nutrition <= 0) || (hydration <= 0)) {
+		    gameOver = true;
+		    return;
+		}
+	    }
+	    else {
+		System.out.println("Sorry, there was an error in running your command. Please input your command again.");
+		System.out.println(c);
+	    }
 	}
     }
     
