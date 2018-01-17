@@ -111,7 +111,7 @@ Qian     :: Revise Woo.java; Write store()
 
 2018-01-16
 Clarence :: 
-Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog
+Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog and uml
 Qian     :: 
 
 yyyy-mm-dd
