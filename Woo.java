@@ -164,9 +164,9 @@ public class Woo {
 	 }
 	 else if (option == 2) {
 	     String s = "";
-	     int m = -1;
+	     int m = -2;
 	     s += "Items to sell:";
-	     for (int i = 1; i < inventory.size(); i++){
+	     for (int i = 0; i < inventory.size(); i++){
 		 if (inventory.get(i) instanceof Nonconsumable){
 		     s += "\n\t" + i + ": " + storeInventory.get(i) + storeInventory.get(i).getPrice();
 		 }
