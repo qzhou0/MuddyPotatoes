@@ -32,7 +32,8 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to lack of adequate communication, the goal of the program was lost and distorted, but after we had a discussion, we were able to get back on track with the project. 
+* We started of making a program similar to a delivery app but suddenly changed it into a simulation game. Due to a slight lack of adequate communication and misunderstandings, the goal of the program was lost and distorted, but after we had a discussion, we were promptly able to get back on track with the project. 
+* While in planning phases, some of us had different ideas as to how the program should be. Examples include what classes there should be, how items should be displayed, stored, and transfered, and what variables were needed or preferable. To resolve the issue the three of us discussed it and made our case for our opinions. The process resulted in a better plan for better code.
 * Get a runnable basic version
 <Wow, we so BOSS bc...>
 
