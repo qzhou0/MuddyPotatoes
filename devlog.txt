@@ -4,29 +4,7 @@ Tania Cao
 Qian Zhou
 pd 01
 ---------------------
-<Project>
-
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+Juan's Delivery Co.
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
@@ -36,30 +14,20 @@ OBSTACLES OVERCOME
 * While in planning phases, some of us had different ideas as to how the program should be. Examples include what classes there should be, how items should be displayed, stored, and transfered, and what variables were needed or preferable. To resolve the issue the three of us discussed it and made our case for our opinions. The process resulted in a better plan for better code.
 * Get a runnable basic version
 * there was an error for the sell part in store() which turns out to be the remnants of the copying from the buying option in store()
-<Wow, we so BOSS bc...>
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * We only have three Items that can be played with
 * the display might be a little unclear in some places
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
 * There were two Classes called InputStreamReader and BufferedReader in YoRPG
 * We can do something like a "bouncing ball" with functions by calling one in the other and the other in this one, as in playDay() and nextDay()
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * We changed Item and its subclasses from abstract to non-abstract because that would be simpler and we can instantiate the three types of Items, were we had thought we could make a class for every object before
-
-We changed ___ to ___ bc...
-<etc>
-<etc>
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,13 +85,6 @@ Tania    :: Update Woo.java and write code for playGame() and nextDay() so it ca
 Qian     :: Revise Woo.java; Write store()
 
 2018-01-16
-Clarence :: revise Woo, test for bugs
-Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog and uml; test Woo
-Qian     :: edit Woo and update Item classes, fix Woo
-
-yyyy-mm-dd
---------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-==============================================================
+Clarence :: Revise Woo; Test for bugs
+Tania    :: Update Woo.java; Revise all other classes and subclasses; Update devlog and uml; Test Woo
+Qian     :: Edit Woo; Update Item classes; Fix Woo
