@@ -17,9 +17,9 @@ public class Woo {
     public Woo() {
 	day = 1;
 	time = 0;
-	balance = (int) (Math.random() * 101) + 100;
-	nutrition = 80;
-	hydration = 80;
+	balance = 100 + (int) (Math.random() * 15)
+	nutrition = 100;
+	hydration = 100;
 	inventory = new ArrayList<Item>();
 	storeInventory = new ArrayList<Item>();
 	deliveringItems = new ArrayList<Item>();
