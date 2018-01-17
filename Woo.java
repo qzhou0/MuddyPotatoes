@@ -17,7 +17,7 @@ public class Woo {
     public Woo() {
 	day = 1;
 	time = 0;
-	balance = 100 + (int) (Math.random() * 15)
+	balance = 100 + (int) (Math.random() * 15);
 	nutrition = 100;
 	hydration = 100;
 	inventory = new ArrayList<Item>();
@@ -152,7 +152,7 @@ public class Woo {
 	     }
 	     catch (Exception e) {}
 	     
-	     if (b > -1 && b < storeInventory.size()){
+	     if (b > -1 && b < storeInventory.size() && storeInventory.get(b).getCost()<balance){
 		 buy(storeInventory.get(b));
 	     }
 	     else if (b == -1){
