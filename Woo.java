@@ -32,8 +32,7 @@ public class Woo {
 	Drink water = new Drink("water", 3,1,40);
 	basicItems.add(water);
 	Nonconsumable paper= new Nonconsumable("paper",3,1,40);
-	basicItems.add(paper);
-		       
+	basicItems.add(paper);	       
     }
 
     public void thief(){
@@ -59,7 +58,6 @@ public class Woo {
 		System.out.println(getInfo());
 	    }
 	    else if (o == 2) {
-		
 	    }
 	    else {
 		System.out.println("Sorry, there was an error in running your command.");
@@ -186,7 +184,6 @@ public class Woo {
 		 sell(inventory.get(m));
 	     }
 	     else if (m == -1){
-	       
 	     }
 	     else{
 		 System.out.println("Sorry, there was an error in running your command.");
@@ -315,7 +312,6 @@ public class Woo {
 	}
 	else if (command == 2) {
 	    System.out.println(getDelStatus());
-	
 	}
 	else if (command == 3) {
 	    System.out.println(getInventory());
@@ -339,9 +335,7 @@ public class Woo {
 		    nutrition += I.getFoodVal();
 		    hydration += I.getDrinkVal();
 		    System.out.println("Your " + I + " has arrived.\n");
-		    
 		    inventory.add(deliveringItems.remove(i));//must remove at the end
-		    
 		}
 	    } //they're not tested for we have no items
 	    
