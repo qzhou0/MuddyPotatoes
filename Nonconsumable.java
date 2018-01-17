@@ -1,16 +1,15 @@
 public class Nonconsumable extends Item{
-
     public Nonconsumable(){
-	//healthVal = 0;
+	// is this necessary?
+	NutritionVal = 0;
+	HydrationVal = 0;
     }
 
     public String toString(){
-      String s ="";
-      s += super.toString();// will this work?
+	String s = "";
+      s += super.toString(); // will this work?
       s += "\nType: Nonconsumable";
-      s += "\nPrice that can be sold at:" + price;
-      s += "\n";
+      s += "\nSelling Price:" + price;
       return s;
     }
 }
-
